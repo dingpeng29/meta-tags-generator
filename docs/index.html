@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="免费在线SEO元标签生成器，一键生成HTML Meta标签、Open Graph标签、Twitter Card和JSON-LD结构化数据。前端开发SEO优化必备工具。">
+<meta name="keywords" content="Meta标签生成器,SEO元标签,Open Graph生成器,JSON-LD生成,Twitter Card,HTML Meta,SEO工具">
+<meta property="og:title" content="SEO元标签在线生成器 - Meta Tags Generator | ToolBox Pro">
+<meta property="og:description" content="一键生成HTML Meta、Open Graph、Twitter Card和JSON-LD结构化数据。">
+<meta property="og:url" content="https://dingpeng29.github.io/meta-tags-generator/">
+<title>SEO元标签生成器 - Meta Tags / Open Graph / JSON-LD | ToolBox Pro</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"SEO元标签生成器","url":"https://dingpeng29.github.io/meta-tags-generator/","description":"在线生成HTML Meta标签、Open Graph、Twitter Card和JSON-LD结构化数据","applicationCategory":"Utility","operatingSystem":"All","inLanguage":"zh-CN"}
+</script>
+<style>
+:root{--bg:#f8fafc;--card:#fff;--text:#1e293b;--text2:#64748b;--border:#e2e8f0;--primary:#3b82f6;--primary-h:#2563eb;--green:#10b981;--orange:#f59e0b;--shadow:0 1px 3px rgba(0,0,0,0.06);--radius:12px;--radius-sm:8px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;}
+.header{background:var(--card);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+.header .logo{font-size:20px;font-weight:700;color:var(--primary);text-decoration:none;}
+.header .back{color:var(--text2);text-decoration:none;font-size:14px;}.header .back:hover{color:var(--primary);}
+.container{max-width:900px;margin:0 auto;padding:24px 20px;}
+.hero{text-align:center;padding:32px 20px 24px;}
+.hero h1{font-size:28px;font-weight:800;color:var(--text);}
+.hero p{color:var(--text2);font-size:14px;margin-top:8px;}
+.card{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:20px;}
+.card h3{font-size:15px;margin-bottom:14px;color:var(--text);}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.field{margin-bottom:12px;}
+.field label{display:block;font-size:13px;color:var(--text2);margin-bottom:4px;font-weight:600;}
+.field input,.field select,.field textarea{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:'SF Mono','Fira Code','Consolas',monospace;background:var(--bg);}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(59,130,246,0.1);}
+.field textarea{resize:vertical;min-height:70px;}
+.btn{padding:10px 20px;border-radius:var(--radius-sm);font-size:14px;font-weight:600;cursor:pointer;border:none;transition:all .2s;}
+.btn-primary{background:var(--primary);color:#fff;}.btn-primary:hover{background:var(--primary-h);}
+.btn-secondary{background:var(--bg);color:var(--text);border:1px solid var(--border);}.btn-secondary:hover{background:var(--border);}
+.btn-green{background:var(--green);color:#fff;}.btn-green:hover{background:#059669;}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.tabs{display:flex;gap:4px;margin-bottom:16px;background:var(--bg);border-radius:var(--radius-sm);padding:4px;}
+.tab{padding:8px 16px;border-radius:6px;font-size:13px;cursor:pointer;border:none;background:none;color:var(--text2);transition:all .2s;font-weight:500;}
+.tab.active{background:var(--card);color:var(--text);box-shadow:var(--shadow);}
+.preview-box{padding:16px;background:#1e293b;border-radius:var(--radius-sm);font-family:'SF Mono','Fira Code','Consolas',monospace;font-size:12px;line-height:1.7;color:#e2e8f0;overflow-x:auto;white-space:pre-wrap;max-height:500px;overflow-y:auto;position:relative;}
+.preview-box .copy-btn{position:sticky;top:0;float:right;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;}.preview-box .copy-btn:hover{background:rgba(255,255,255,0.25);}
+.tag{color:#93c5fd;}.attr{color:#fde68a;}.val{color:#6ee7b7;}.comment{color:#64748b;}
+.social-preview{margin-top:16px;padding:14px;background:#f0f4f8;border-radius:var(--radius-sm);border-left:4px solid var(--primary);font-size:13px;}
+.social-preview .og-title{font-size:15px;font-weight:700;color:var(--primary);}
+.social-preview .og-url{font-size:11px;color:var(--text2);margin-top:2px;}
+.social-preview .og-desc{font-size:13px;color:var(--text2);margin-top:4px;}
+.footer{text-align:center;padding:32px 20px;color:var(--text2);font-size:12px;border-top:1px solid var(--border);margin-top:32px;}.footer a{color:var(--primary);text-decoration:none;}
+.toast{position:fixed;top:20px;right:20px;padding:12px 20px;border-radius:var(--radius-sm);color:#fff;font-size:14px;z-index:9999;animation:slideIn .3s;}
+.toast.success{background:var(--green);}@keyframes slideIn{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:12px;font-size:11px;font-weight:600;}
+.badge-og{background:#dbeafe;color:#1d4ed8;}.badge-tw{background:#e0f2fe;color:#0369a1;}.badge-ld{background:#fef3c7;color:#b45309;}.badge-meta{background:#f3e8ff;color:#7c3aed;}
+.powered{text-align:center;font-size:13px;color:var(--text2);margin-top:24px;}
+.powered a{color:var(--primary);text-decoration:none;font-weight:600;}
+@media(max-width:700px){.row,.row3{grid-template-columns:1fr;}.hero h1{font-size:22px;}}
+</style>
+</head>
+<body>
+<header class="header"><a href="/meta-tags-generator/" class="logo">🏷️ Meta Tags Generator</a><a href="/toolbox-pro/" class="back">← ToolBox Pro</a></header>
+<div class="container">
+<div class="hero"><h1>SEO 元标签在线生成器</h1><p>一键生成HTML Meta标签、Open Graph、Twitter Card和JSON-LD结构化数据。前端开发SEO优化必备。</p></div>
+
+<div class="card">
+<h3>📋 基本信息</h3>
+<div class="field"><label>网页标题 (Title)</label><input type="text" id="title" placeholder="我的网页标题 | 网站名" oninput="gen()"></div>
+<div class="field"><label>网页描述 (Description)</label><textarea id="desc" placeholder="网页简要描述，150字以内..." oninput="gen()"></textarea></div>
+<div class="field"><label>关键词 (Keywords)</label><input type="text" id="keywords" placeholder="关键词1, 关键词2, 关键词3" oninput="gen()"></div>
+<div class="field"><label>规范网址 (Canonical URL)</label><input type="text" id="url" placeholder="https://example.com/page" oninput="gen()"></div>
+</div>
+
+<div class="card">
+<h3>🖼️ Open Graph 社交分享</h3>
+<div class="row">
+<div class="field"><label>OG标题</label><input type="text" id="ogTitle" placeholder="同网页标题" oninput="gen()"></div>
+<div class="field"><label>OG描述</label><input type="text" id="ogDesc" placeholder="同网页描述" oninput="gen()"></div>
+</div>
+<div class="row">
+<div class="field"><label>OG图片URL</label><input type="text" id="ogImage" placeholder="https://example.com/og-image.jpg" oninput="gen()"></div>
+<div class="field"><label>OG类型</label><select id="ogType" oninput="gen()"><option value="website">website</option><option value="article">article</option><option value="product">product</option></select></div>
+</div>
+<div class="field"><label>Twitter Card 类型</label><select id="twCard" oninput="gen()"><option value="summary_large_image">summary_large_image（大图卡片）</option><option value="summary">summary（小图卡片）</option></select></div>
+</div>
+
+<div class="card">
+<h3>📊 JSON-LD 结构化数据</h3>
+<div class="field"><label>数据类型</label><select id="ldType" oninput="gen()">
+<option value="WebApplication">WebApplication（Web应用）</option>
+<option value="WebSite">WebSite（网站）</option>
+<option value="Article">Article（文章）</option>
+<option value="Product">Product（产品）</option>
+</select></div>
+<div id="ldFields"></div>
+</div>
+
+<div class="btn-row">
+<button class="btn btn-primary" onclick="gen()">🔄 生成元标签</button>
+<button class="btn btn-green" onclick="copyCode()">📋 复制代码</button>
+<button class="btn btn-secondary" onclick="resetAll()">清空</button>
+</div>
+
+<div class="card" style="margin-top:20px;">
+<h3>📝 生成的HTML代码</h3>
+<div class="social-preview" id="socialPrev" style="display:none;"></div>
+<div class="preview-box" id="codeOut" style="margin-top:8px;"><span class="comment">&lt;!-- 填写信息后自动生成 --&gt;</span></div>
+</div>
+
+<div class="powered">由 <a href="/toolbox-pro/">ToolBox Pro</a> 提供支持 — 更多免费开发工具</div>
+</div>
+<footer class="footer"><p>SEO Meta Tags Generator — 所有数据在浏览器本地处理，不上传服务器</p></footer>
+<script>
+function gen(){
+var t=document.getElementById('title').value||'';
+var d=document.getElementById('desc').value||'';
+var k=document.getElementById('keywords').value||'';
+var u=document.getElementById('url').value||'';
+var ot=document.getElementById('ogTitle').value||t;
+var od=document.getElementById('ogDesc').value||d;
+var oi=document.getElementById('ogImage').value||'';
+var oty=document.getElementById('ogType').value||'website';
+var tw=document.getElementById('twCard').value||'summary_large_image';
+var ld=document.getElementById('ldType').value||'WebApplication';
+var lines=[];
+
+lines.push('<span class="comment">&lt;!-- Primary Meta Tags --&gt;</span>');
+lines.push('<span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="val">"UTF-8"</span><span class="tag">&gt;</span>');
+lines.push('<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"viewport"</span> <span class="attr">content</span>=<span class="val">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>');
+if(d) lines.push('<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"description"</span> <span class="attr">content</span>=<span class="val">"'+esc(d)+'"</span><span class="tag">&gt;</span>');
+if(k) lines.push('<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"keywords"</span> <span class="attr">content</span>=<span class="val">"'+esc(k)+'"</span><span class="tag">&gt;</span>');
+if(t) lines.push('<span class="tag">&lt;title&gt;</span>'+esc(t)+'<span class="tag">&lt;/title&gt;</span>');
+if(u) lines.push('<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="val">"canonical"</span> <span class="attr">href</span>=<span class="val">"'+esc(u)+'"</span><span class="tag">&gt;</span>');
+lines.push('<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"robots"</span> <span class="attr">content</span>=<span class="val">"index, follow"</span><span class="tag">&gt;</span>');
+
+lines.push('');
+lines.push('<span class="comment">&lt;!-- Open Graph / Facebook --&gt;</span>');
+if(ot) lines.push('<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:title"</span> <span class="attr">content</span>=<span class="val">"'+esc(ot)+'"</span><span class="tag">&gt;</span>');
+if(od) lines.push('<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:description"</span> <span class="attr">content</span>=<span class="val">"'+esc(od)+'"</span><span class="tag">&gt;</span>');
+if(u) lines.push('<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:url"</span> <span class="attr">content</span>=<span class="val">"'+esc(u)+'"</span><span class="tag">&gt;</span>');
+if(oi) lines.push('<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:image"</span> <span class="attr">content</span>=<span class="val">"'+esc(oi)+'"</span><span class="tag">&gt;</span>');
+lines.push('<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:type"</span> <span class="attr">content</span>=<span class="val">"'+esc(oty)+'"</span><span class="tag">&gt;</span>');
+lines.push('<span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="val">"og:site_name"</span> <span class="attr">content</span>=<span class="val">"'+esc(t.split('|')[0]||t)+'"</span><span class="tag">&gt;</span>');
+
+lines.push('');
+lines.push('<span class="comment">&lt;!-- Twitter --&gt;</span>');
+lines.push('<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"twitter:card"</span> <span class="attr">content</span>=<span class="val">"'+esc(tw)+'"</span><span class="tag">&gt;</span>');
+if(ot) lines.push('<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"twitter:title"</span> <span class="attr">content</span>=<span class="val">"'+esc(ot)+'"</span><span class="tag">&gt;</span>');
+if(od) lines.push('<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"twitter:description"</span> <span class="attr">content</span>=<span class="val">"'+esc(od)+'"</span><span class="tag">&gt;</span>');
+if(oi) lines.push('<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="val">"twitter:image"</span> <span class="attr">content</span>=<span class="val">"'+esc(oi)+'"</span><span class="tag">&gt;</span>');
+
+var ldObj={};
+if(ld==='WebApplication'){ldObj={'@context':'https://schema.org','@type':'WebApplication','name':ot||t,'url':u,'description':od||d,'applicationCategory':'Utility','operatingSystem':'All'};}
+else if(ld==='WebSite'){ldObj={'@context':'https://schema.org','@type':'WebSite','name':ot||t,'url':u,'description':od||d};}
+else if(ld==='Article'){ldObj={'@context':'https://schema.org','@type':'Article','headline':ot||t,'description':od||d,'url':u,'author':{'@type':'Person','name':''}};}
+else if(ld==='Product'){ldObj={'@context':'https://schema.org','@type':'Product','name':ot||t,'description':od||d,'url':u};}
+
+lines.push('');
+lines.push('<span class="comment">&lt;!-- JSON-LD Structured Data --&gt;</span>');
+lines.push('<span class="tag">&lt;script</span> <span class="attr">type</span>=<span class="val">"application/ld+json"</span><span class="tag">&gt;</span>');
+lines.push(esc(JSON.stringify(ldObj,null,2)));
+lines.push('<span class="tag">&lt;/script&gt;</span>');
+
+document.getElementById('codeOut').innerHTML=lines.join('\n');
+updateSocialPreview(ot||t,od||d,u,oi);
+saveSelection();
+}
+
+function updateSocialPreview(title,desc,url,img){
+var sp=document.getElementById('socialPrev');
+if(!title&&!desc&&!url){sp.style.display='none';return;}
+sp.style.display='block';
+var h='<div style="font-size:12px;color:var(--text2);margin-bottom:6px;">📱 社交媒体分享预览</div>';
+if(img) h+='<div style="margin-bottom:8px;"><img src="'+esc(img)+'" style="max-width:100%;max-height:200px;border-radius:6px;border:1px solid var(--border);" onerror="this.style.display=\'none\'"></div>';
+h+='<div class="og-title">'+(title||'（未填写标题）')+'</div>';
+h+='<div class="og-url">'+(url||'')+'</div>';
+h+='<div class="og-desc">'+(desc||'（未填写描述）')+'</div>';
+sp.innerHTML=h;
+}
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function copyCode(){
+var code=document.getElementById('codeOut').textContent;
+navigator.clipboard.writeText(code).then(function(){
+var t=document.createElement('div');t.className='toast success';t.textContent='已复制到剪贴板';document.body.appendChild(t);setTimeout(function(){t.remove();},2000);
+});
+}
+
+function resetAll(){
+var inps=document.querySelectorAll('input[type="text"],textarea');
+inps.forEach(function(i){i.value='';});
+document.getElementById('ogType').value='website';
+document.getElementById('twCard').value='summary_large_image';
+document.getElementById('ldType').value='WebApplication';
+document.getElementById('codeOut').innerHTML='<span class="comment">&lt;!-- 填写信息后自动生成 --&gt;</span>';
+document.getElementById('socialPrev').style.display='none';
+}
+
+function saveSelection(){
+try{localStorage.setItem('metaTags_type',document.getElementById('ldType').value);}catch(e){}
+}
+
+(function load(){
+var t=document.getElementById('ldType');
+try{var v=localStorage.getItem('metaTags_type');if(v)t.value=v;}catch(e){}
+})();
+</script>
+</body>
+</html>
